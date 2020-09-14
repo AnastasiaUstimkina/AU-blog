@@ -1,0 +1,36 @@
+<div class='header '>
+
+  <a class='title'  [routerLink]="['/']"> Anastacia Ustimkina</a> 
+  
+   <ul>
+    <li routerLinkActive='active' [routerLinkActiveOptions]='{exact:true}'>
+      <a [routerLink]="['/about']"> about </a> 
+    </li>
+    <li routerLinkActive='active' [routerLinkActiveOptions]='{exact:true}'>
+      <a [routerLink]="['/podcast']"> podcast </a> 
+    </li>
+    <li routerLinkActive='active' [routerLinkActiveOptions]='{exact:true}'>
+      <a [routerLink]="['/posts']" > blog </a> 
+    </li>
+  </ul>  
+  
+</div>
+<!--
+<nav class="navbar bg-primary">
+  <h1>
+    <a class='title' routerLink="/">Anastacia Ustimkina</a>
+  </h1>
+
+  <ul>
+    <li routerLinkActive='active' [routerLinkActiveOptions]='{exact:true}'>
+      <a [routerLink]="['/about']"> about </a> 
+    </li>
+    <li routerLinkActive='active' [routerLinkActiveOptions]='{exact:true}'>
+      <a [routerLink]="['/cv']"> cv </a> 
+    </li>
+    <li routerLinkActive='active' [routerLinkActiveOptions]='{exact:true}'>
+      <a [routerLink]="['/posts']" > blog </a> 
+    </li>
+  </ul>
+</nav>
+-->

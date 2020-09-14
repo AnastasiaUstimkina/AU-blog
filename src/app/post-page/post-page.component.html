@@ -1,0 +1,27 @@
+<app-header> </app-header>
+<div
+  *ngIf='post$ | async as post'
+  class="page-post"
+>
+ <div>
+    <h2 class ='page-post-title'>{{post.title}}</h2>
+  </div>
+
+  <div class='page-post-date' >
+    <p>{{post.data | date:'d MMMM, y':null | lowercase}}</p>
+  </div>
+
+  <div class='img-container'>
+    <img [src]='post.imgPath'>
+  </div>
+ 
+
+  <div class='page-post-text'>
+    <quill-view-html  [content]='post.text'>
+    </quill-view-html>
+  </div>
+  <div>
+   <app-footer>  </app-footer>
+   </div>
+</div>
+

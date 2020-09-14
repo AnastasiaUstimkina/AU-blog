@@ -1,0 +1,4 @@
+@import  'src/styles.scss';
+ul{
+    @include adaptiv-front(25, 15);
+}

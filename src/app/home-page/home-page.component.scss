@@ -1,0 +1,46 @@
+@import  'src/styles.scss';
+
+html, body, .info  {
+    height: 100%;
+   // width: 100%;
+    display: block;
+}
+
+.info  {
+  
+  position: fixed;
+  text-align: center;
+  top: 30%;
+  left: 0;
+  right: 0;
+  margin-top: -9px;
+}
+
+.title{
+  line-height: 100%;
+}
+ul{
+  padding: 10px;
+  margin: 10px;
+}
+li{
+  line-height: 1;
+  @include adaptiv-front(30, 15);
+  padding: 5px 15px;
+  text-align: center;
+  display:inline-block;
+}
+.footer {
+  //clear: both;
+ // display: block;
+  position: fixed;
+ // justify-content: center;
+ // text-align: center;
+  //margin: 0 auto;
+ // height: 200px;
+  top: 95%;
+  left: 0;
+  right: 0;
+// margin-top: -10px;
+}
+

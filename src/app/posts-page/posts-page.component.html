@@ -1,0 +1,44 @@
+<app-header> </app-header>
+
+<div >
+  <div
+    *ngIf='posts$ | async as posts; else loading'
+    
+  >
+      <div class="container"> 
+          <div
+            *ngFor='let post of posts'
+            class='container-post'
+          >
+            <a [routerLink]="['/posts', post.id]" >
+            <div class='img-container'>  
+              <img [src]='post.imgPath'>
+            </div>
+            </a>
+            
+            <p class='container-post-date'> {{post.data | date:'d MMMM, y':null | lowercase}} </p>
+
+            <p class='container-post-text'>
+              <a [routerLink]="['/posts', post.id]"> 
+                {{post.title}}  </a> 
+            </p> 
+            
+        </div>
+      </div> 
+       <div>
+   <app-footer>  </app-footer>
+   </div>
+</div>
+  </div>
+ 
+
+<ng-template #loading>
+  <div class="lds-default">
+    <div></div><div></div>
+    <div></div><div></div>
+    <div></div><div></div>
+    <div></div><div></div>
+    <div></div><div></div>
+    <div></div><div></div>
+   </div>
+</ng-template>

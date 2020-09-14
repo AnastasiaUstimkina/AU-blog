@@ -1,0 +1,76 @@
+<form [formGroup]='form' (ngSubmit)='submit()'>
+    <h2> create post! </h2>
+    <div>
+        <div
+            class="form-control"
+            [ngClass]="{invalid: form.get('title').touched && form.get('title').invalid}"
+        >
+            <label for="title">title:</label>
+            <input id="title" type="text" formControlName="title">
+            <div
+                *ngIf="form.get('title').touched && form.get('title').invalid"
+                class="validation"
+            >
+                <small *ngIf="form.get('title').errors.required">
+                    Enter post title
+                </small>
+            </div>
+        </div>
+
+        <div
+            class="form-control"
+            [ngClass]="{invalid: form.get('data').touched && form.get('data').invalid}"
+        >
+            <label for="data">date:</label>
+            <input id="data" type="text" formControlName="data">
+            <div
+                *ngIf="form.get('data').touched && form.get('data').invalid"
+                 class="validation"
+            >
+                <small *ngIf="form.get('data').errors.required">
+                    Enter creation date
+                </small>
+                
+            </div>
+        </div>
+
+        <div class="form-control" *ngIf="selectedFile; else loading">
+            <label> image of post </label>
+            <label class="file">
+                <span class="file-custom"> choose file...</span> 
+                <input type="file" id="file"  (change)='onFileSelected($event)' >
+                <span class="file-custom " *ngIf="selectedFile"> {{selectedFile.name}}</span> 
+            </label>
+
+            <button  *ngIf="selectedFile" type='button' (click)='onUpload()'> upload </button>
+            <div  class='form-img'>
+                <div *ngIf="loadedImg" class='img-container'>
+                    <img [src]='post.imgPath'>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-control">
+            <label> content </label>
+            <quill-editor formControlName="text"></quill-editor>
+        </div>
+
+        
+        <button
+            type='submit'
+            [disabled]="form.invalid"
+        > create post </button>
+    </div>
+</form>
+
+<ng-template #loading>
+<div  class="form-control">
+    <label> image of post </label>
+    <label class="file">
+        <span class="file-custom"> choose file...</span> 
+        <input type="file" id="file"  (change)='onFileSelected($event)' >
+    </label>
+</div>
+           
+            
+</ng-template>

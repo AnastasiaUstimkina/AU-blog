@@ -1,0 +1,27 @@
+
+<router-outlet> </router-outlet>
+ 
+<div class='info'>
+
+  <h1 class='title'> Anastacia Ustimkina</h1> 
+
+   <ul class='nav-bar'>
+    <li routerLinkActive='active' [routerLinkActiveOptions]='{exact:true}'>
+      <a [routerLink]="['/about']"> about </a> 
+    </li>
+    <li routerLinkActive='active' [routerLinkActiveOptions]='{exact:true}'>
+      <a [routerLink]="['/cv']"> podcast </a> 
+    </li>
+    <li routerLinkActive='active' [routerLinkActiveOptions]='{exact:true}'>
+      <a [routerLink]="['/posts']"> blog </a> 
+    </li>
+  </ul>  
+ 
+ 
+  <div class='footer'>
+   <app-footer>  </app-footer>
+   </div>
+
+</div>
+
+

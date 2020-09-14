@@ -1,0 +1,31 @@
+@import  'src/styles.scss';
+
+.header{
+    display: block;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    text-align: center;
+}
+
+.title{
+   // font-family: italic;
+    @include adaptiv-front(50, 20);
+    line-height: 135%;
+    //color: #5193b3;
+    color: #000;
+   // font-weight: 300;
+    display: block;
+  }
+
+  ul{
+    padding-top: 2%;
+    //padding: 10px;
+    display: block;
+  }
+  li{
+    line-height: 1;
+    @include adaptiv-front(30, 15);
+    padding: 0px 15px;
+    text-align: center;
+    display:inline-block;
+  }
